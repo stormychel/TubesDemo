@@ -22,10 +22,11 @@ struct ContentView: View {
                 .gesture(
                     TapGesture()
                         .onEnded({
-                            print("Tapped!")
-                            for index in (0...96-1) {
-                                let number = Int.random(in: 0...9999999999999)
-                                barcodeArray[index] = number
+                            withAnimation {
+                                for index in (0...96-1) {
+                                    let number = Int.random(in: 0...9999999999999)
+                                    barcodeArray[index] = number
+                                }
                             }
                         })
                 )
